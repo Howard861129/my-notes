@@ -16,30 +16,31 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      title: "Noto Sans TC"
+      header: "Noto Sans TC"
+      body: "Noto Sans TC"
+      code: "IBM Plex Mono"
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#f5f7f9"
+        lightgray: "#dfe6ec"
+        gray: "#93a2af"
+        darkgray: "#3a4955"
+        dark: "#18232c"
+        secondary: "#356f8a"
+        tertiary: "#668798"
+        highlight: "rgba(53, 111, 138, 0.12)"
+        textHighlight: "#d6ad5c66"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#111820"
+        lightgray: "#263442"
+        gray: "#607284"
+        darkgray: "#c5d0da"
+        dark: "#eef3f7"
+        secondary: "#69a2bd"
+        tertiary: "#8ba1ad"
+        highlight: "rgba(105, 162, 189, 0.14)"
+        textHighlight: "#c69c4b55"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -82,7 +83,7 @@ plugins:
     order: 50
     layout:
       position: right
-      priority: 30
+      priority: 10
   - source: "@quartz-community/crawl-links"
     enabled: true
     options:
@@ -110,8 +111,8 @@ plugins:
     order: 92
   - source: "@quartz-community/quartz-fonts"
     enabled: true
-  - source: "@quartz-themes/core"
-    enabled: true
+  - source: "@quartz-themes/core" #暫停預設主題覆蓋
+    enabled: false
     options:
       theme: default
       mode: both
@@ -168,7 +169,7 @@ plugins:
     enabled: true
     layout:
       position: right
-      priority: 10
+      priority: 30
   - source: "@quartz-community/search"
     enabled: true
     layout:
@@ -216,6 +217,10 @@ plugins:
       group: toolbar
   - source: "@quartz-community/breadcrumbs"
     enabled: true
+    options:
+      rootName: "首頁"
+      resolveFrontmatterTitle: true
+      showCurrentPage: true
     layout:
       position: beforeBody
       priority: 5
@@ -232,8 +237,7 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        GitHub: https://github.com/Howard861129/my-notes
     layout:
       position: footer
       priority: 50
