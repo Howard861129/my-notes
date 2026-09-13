@@ -1,12 +1,12 @@
 ---
 title: 首頁
 ---
+# 歡迎來到宇子禾的工程筆記
 
-# 歡迎來到我的網站
+這是我用 Obsidian、Markdown、Quartz 與 GitHub Pages 建立的網站。
 
-這是我用 Obsidian、Quartz 與 GitHub Pages 建立的網站。
+## 網站歷史
 
-## 測試內容
-
-如果你看到這段文字，就代表 Markdown 已經成功轉換成網頁。
+2026.09.12 首次建立網站
+2026.09.13 修改網站視覺風格
 

@@ -31,6 +31,8 @@
 /* 手機版網站標題 */
 @media (max-width: 800px) {
   .page-title {
+    // 字體隨螢幕寬度調整，但最小20px、最大28px。
+    // 5.5vw字體大小取瀏覽器視窗寬度的5.5%
     font-size: clamp(20px, 5.5vw, 28px);
     white-space: nowrap;
     line-height: 1.2;
