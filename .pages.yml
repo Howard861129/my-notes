@@ -3,6 +3,26 @@ media:
   output: /attachments
 
 content:
+  - name: homepage
+    label: 首頁
+    type: file
+    path: content/index.md
+    format: yaml-frontmatter
+
+    fields:
+      - name: title
+        label: 標題
+        type: string
+        required: true
+
+      - name: body
+        label: 首頁內容
+        type: rich-text
+        options:
+          format: markdown
+          switcher: true
+          media: false
+          
   - name: articles
     label: 文章
     type: collection
