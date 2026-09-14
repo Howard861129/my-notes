@@ -1,18 +1,21 @@
+media:
+  input: content/attachments
+  output: /attachments
+
 content:
   - name: articles
-    label: 文章撰寫
+    label: 文章
     type: collection
     path: content
     subfolders: true
-
     exclude:
       - index.md
 
     format: yaml-frontmatter
 
     filename:
-      template: "{year}-{month}-{day}-{hour}{minute}{second}.md"
-      field: create
+      template: "{primary}.md"
+      field: true
 
     view:
       layout: tree
@@ -25,9 +28,8 @@ content:
 
     fields:
       - name: title
-        label: 文章標題
+        label: 標題
         type: string
-        required: true
 
       - name: body
         label: 文章內容
