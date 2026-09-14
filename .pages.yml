@@ -25,7 +25,7 @@ content:
 
     fields:
       - name: title
-        label: 標題
+        label: 文章標題
         type: string
         required: true
 
