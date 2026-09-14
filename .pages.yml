@@ -1,0 +1,40 @@
+media:
+  input: content/attachments
+  output: /attachments
+
+content:
+  - name: articles
+    label: 文章
+    type: collection
+    path: content
+    subfolders: true
+    exclude:
+      - index.md
+
+    format: yaml-frontmatter
+
+    filename:
+      template: "{primary}.md"
+      field: true
+
+    view:
+      layout: tree
+      primary: title
+      fields:
+        - title
+      search:
+        - title
+        - body
+
+    fields:
+      - name: title
+        label: 標題
+        type: string
+
+      - name: body
+        label: 文章內容
+        type: rich-text
+        options:
+          format: markdown
+          switcher: true
+          media: false
