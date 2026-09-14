@@ -3,6 +3,9 @@ media:
   output: /attachments
 
 content:
+  # =========================
+  # 首頁
+  # =========================
   - name: homepage
     label: 首頁
     type: file
@@ -23,6 +26,9 @@ content:
           switcher: true
           media: false
           
+  # =========================
+  # 一般文章
+  # =========================
   - name: articles
     label: 文章
     type: collection
