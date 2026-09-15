@@ -1,4 +1,8 @@
-# Pages CMS 文章管理流程
+---
+title: Pages CMS文章管理流程
+tags:
+  - Pages CMS
+---
 
 本文件整理目前網站使用 **Pages CMS + GitHub + Quartz** 時，新增、修改、刪除一般文章，以及修改首頁的操作流程。
 

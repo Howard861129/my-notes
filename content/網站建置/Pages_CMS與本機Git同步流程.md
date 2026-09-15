@@ -1,4 +1,8 @@
-# Pages CMS 與本機 Git 同步流程
+---
+title: Pages CMS與本機Git同步流程
+tags:
+  - Pages CMS
+---
 
 本文件整理目前網站使用 **Pages CMS + GitHub + Quartz + 本機 VS Code / PowerShell** 時的同步方式。
 

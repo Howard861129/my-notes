@@ -8,7 +8,7 @@ title: 首頁
 ## 網站歷史
 
 - 2026.09.12 首次建立網站
-- 2026.09.13 修改網站視覺風格
+- 2026.09.13 透過quartz.config.yaml及custom.scss修改網站視覺風格
 - 2026.09.14 針對GitHub Pages透過Pages CMS可線上編輯
-- 2026.09.15 進行JavaScript功能測試
+- 2026.09.15 進行JavaScript及TypeScript功能測試
 
