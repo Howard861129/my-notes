@@ -11,4 +11,4 @@ title: 首頁
 - 2026.09.13 透過quartz.config.yaml及custom.scss修改網站視覺風格
 - 2026.09.14 針對GitHub Pages透過Pages CMS可線上編輯
 - 2026.09.15 進行JavaScript及TypeScript功能測試
-
+- 2026.09.16 將Obsidian之snippets內CSS移植到custom.scss(待簡化)

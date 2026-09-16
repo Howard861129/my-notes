@@ -60,3 +60,79 @@
     display: none;
   }
 }
+
+.EXE
+{
+ background-color: #000;
+ font-family: PMingLiU;
+ color: #16C60C;
+ padding: 5px 10px;
+ -ms-word-break: break-all;
+ word-break: keep-all;
+}
+
+.EXE p
+{
+ white-space: pre-line;
+ margin: 0;
+}
+
+.keyin
+{
+ background-color: inherit;
+ border: 0;
+ color: transparent;
+ text-shadow: 0 0 0 #fff;
+ font: inherit;
+ width: 0;
+}
+
+ .keyin:focus
+{
+  outline: none;
+ }
+
+.pointer
+{
+ background-color: #fff;
+ -moz-animation: flash 1s infinite;
+ -o-animation: flash 1s infinite;
+ -webkit-animation: flash 1s infinite;
+ animation: flash 1s infinite;
+}
+
+ .pointer:after
+{
+  content: '_';
+ }
+
+@-moz-keyframes flash
+{
+ 0% {opacity: 0;}
+ 20% {opacity: 1;}
+ 40% {opacity: 1;}
+ 60% {opacity: 1;}
+ 80% {opacity: 0;}
+ 100% {opacity: 0;}
+}
+
+@-webkit-keyframes flash
+{
+ 0% {opacity: 0;}
+ 20% {opacity: 1;}
+ 40% {opacity: 1;}
+ 60% {opacity: 1;}
+ 80% {opacity: 0;}
+ 100% {opacity: 0;}
+}
+
+@keyframes flash
+{
+ 0% {opacity: 0;}
+ 20% {opacity: 1;}
+ 40% {opacity: 1;}
+ 60% {opacity: 1;}
+ 80% {opacity: 0;}
+ 100% {opacity: 0;}
+}
+/* http://limitedcode.blogspot.com/2016/05/css-terminal-command-line.html */

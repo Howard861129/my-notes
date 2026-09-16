@@ -4,6 +4,13 @@ tags:
   - test
 ---
 
+<div class="EXE">
+	<div>
+		<span>Hello World</span>
+		<span><label class="pointer"></label></span>
+	</div>
+</div>
+
 $n$維超立方體圖(hypercube graph)定義為
 
 $$

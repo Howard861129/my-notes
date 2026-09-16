@@ -4,18 +4,18 @@ tags:
   - Quartz
 ---
 
-這份文件整理日後透過 Obsidian、Quartz、Git 與 GitHub Pages 發布文章的固定流程。
+這份文件整理日後透過Obsidian、Quartz、Git與GitHub Pages發布文章的固定流程。
 
 ## 網站資訊
 
-- 本機專案：`C:\Users\howar\Documents\MyWebsite\site`
-- 文章目錄：`C:\Users\howar\Documents\MyWebsite\site\content`
-- Git 分支：`v5`
+- 本機專案：`C:\Users\使用者\Documents\MyWebsite\site`
+- 文章目錄：`C:\Users\使用者\Documents\MyWebsite\site\content`
+- Git分支：`v5`
 - 網站：[https://Howard861129.github.io/my-notes/](https://Howard861129.github.io/my-notes/)
 
-## 開啟 VS Code 與 PowerShell
+## 開啟VS Code與PowerShell
 
-### 1. 開啟 VS Code
+### 1. 開啟VS Code
 
 在 Windows 的「開始」選單搜尋並開啟：
 
@@ -26,25 +26,21 @@ Visual Studio Code
 進入：
 
 ```text
-File（檔案）
-→ Open Folder（開啟資料夾）
+File（檔案）→ Open Folder（開啟資料夾）
 ```
 
 選擇網站專案資料夾：
 
 ```text
-C:\Users\howar\Documents\MyWebsite\site
+C:\Users\使用者\Documents\MyWebsite
 ```
 
-如果首頁的「最近使用」已經出現 `site`，直接點選即可。
+### 2. 在VS Code開啟PowerShell
 
-### 2. 在 VS Code 開啟 PowerShell
-
-在 VS Code 上方選單進入：
+在VS Code上方選單進入：
 
 ```text
-Terminal（終端機）
-→ New Terminal（新增終端機）
+Terminal（終端機）→ New Terminal（新增終端機）
 ```
 
 終端機會出現在畫面下方。右上方的終端機類型應為：
