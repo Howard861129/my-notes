@@ -17,7 +17,6 @@ async function getPyodide() {
 
   pyodideLoading = new Promise(async (resolve, reject) => {
     try {
-      // 如果目前頁面尚未載入 Pyodide
       if (!(window as any).loadPyodide) {
         const script = document.createElement("script")
 
@@ -30,6 +29,7 @@ async function getPyodide() {
               await (window as any).loadPyodide()
 
             resolve(pyodideInstance)
+
           } catch (error) {
             reject(error)
           }
@@ -42,10 +42,8 @@ async function getPyodide() {
         }
 
         document.head.appendChild(script)
-      }
 
-      // 如果 Pyodide 已經存在
-      else {
+      } else {
         pyodideInstance =
           await (window as any).loadPyodide()
 
@@ -66,22 +64,39 @@ async function getPyodide() {
 // ==================================================
 
 function getSiteRoot(): URL {
-  const quartzCss =
+
+  const stylesheets =
     [...document.querySelectorAll<HTMLLinkElement>(
       'link[rel="stylesheet"]'
-    )].find((link) =>
-      link.href.endsWith("/index.css")
-    )
+    )]
+
+  const quartzCss =
+    stylesheets.find((link) => {
+      try {
+        const url =
+          new URL(link.href)
+
+        return url.pathname.endsWith(
+          "/index.css"
+        )
+
+      } catch {
+        return false
+      }
+    })
 
   if (!quartzCss) {
     throw new Error(
-      "找不到 Quartz 網站根目錄"
+      "找不到 Quartz 的 index.css"
     )
   }
 
+  const cssURL =
+    new URL(quartzCss.href)
+
   return new URL(
     "./",
-    quartzCss.href
+    cssURL
   )
 }
 
@@ -102,12 +117,17 @@ async function loadPythonMain(
       siteRoot
     )
 
+  console.log(
+    "Python main.py URL:",
+    pythonURL.href
+  )
+
   const response =
     await fetch(pythonURL)
 
   if (!response.ok) {
     throw new Error(
-      `無法載入 main.py：${response.status}`
+      `無法載入 main.py：${response.status}\n${pythonURL.href}`
     )
   }
 
@@ -125,17 +145,16 @@ async function loadPythonMain(
 // ==================================================
 
 async function setupPythonApp() {
+
   const root =
     document.getElementById(
       "python-app"
     )
 
-  // 目前頁面沒有 Python GUI
   if (!root) {
     return
   }
 
-  // 避免 Quartz SPA 重新渲染時重複啟動
   if (
     root.dataset.pythonReady ===
     "true"
@@ -147,12 +166,9 @@ async function setupPythonApp() {
     "true"
 
   try {
+
     root.textContent =
       "正在啟動 Python..."
-
-    // ------------------------------
-    // 啟動 Pyodide
-    // ------------------------------
 
     const pyodide =
       await getPyodide()
@@ -160,20 +176,20 @@ async function setupPythonApp() {
     root.textContent =
       "正在載入 Python GUI..."
 
-    // ------------------------------
-    // 執行 main.py
-    // ------------------------------
-
     await loadPythonMain(
       pyodide
     )
 
   } catch (error) {
+
     console.error(error)
 
     root.textContent =
       "Python GUI 啟動失敗：\n" +
       String(error)
+
+    // 啟動失敗時允許重新嘗試
+    delete root.dataset.pythonReady
   }
 }
 
