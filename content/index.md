@@ -15,3 +15,4 @@ title: 首頁
 - 2026.09.20 建立 [Cloudflare R2](https://dash.cloudflare.com) 貯體以供未來圖片使用
 - 2026.09.20 利用 KiCad、Inkscape 製作電路圖
 - 2026.09.26 建置 `.bat` 及 `.ps1` 自動化網站建置流程
+- 2026.10.07 將 Python 透過 Pyodide 及 TypeScript 內嵌於網頁中
