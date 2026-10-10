@@ -2,6 +2,6 @@
 
 下面的介面完全由 Python 建立：
 
-<div id="python-app">
-正在啟動 Python...
-</div>
+<div id="gui-test-app" data-python-app></div>
+
+<!--<div id="lightup-app" data-python-app></div>-->

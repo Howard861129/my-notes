@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>樹狀目錄產生器｜宇子禾的工程筆記</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body class="te-standalone"><main id="tree-editor-app"><p role="status">正在載入 Python 執行環境，首次開啟可能需要一些時間…</p></main>
+<script>
+// JavaScript 僅負責啟動 Python；轉換與介面事件在 tree_editor.py。
+(async () => {
+  const root = document.getElementById('tree-editor-app');
+  const runtimeURL = 'https://cdn.jsdelivr.net/pyodide/v0.27.7/full/';
+  try {
+    const script = document.createElement('script');
+    script.src = runtimeURL + 'pyodide.js';
+    await new Promise((resolve, reject) => {
+      script.onload = resolve;
+      script.onerror = () => reject(new Error('無法下載 Python 執行環境，請檢查網路後重新整理。'));
+      document.head.appendChild(script);
+    });
+    const pyodide = await loadPyodide({indexURL: runtimeURL});
+    // 相對於此 HTML 的 URL，適用 GitHub Pages 的 /儲存庫名稱/ 子路徑。
+    for (const name of ['tree_core.py', 'tree_editor.py']) {
+      const response = await fetch(new URL('./' + name, location.href));
+      if (!response.ok) throw new Error(name + ' 下載失敗：HTTP ' + response.status);
+      pyodide.FS.writeFile('/home/pyodide/' + name, await response.text(), {encoding: 'utf8'});
+    }
+    await pyodide.runPythonAsync('from tree_editor import mount\napp = mount("tree-editor-app")');
+    window.treeEditorRuntime = pyodide;
+  } catch (error) {
+    root.textContent = '載入失敗：' + error.message;
+    console.error(error);
+  }
+})();
+</script></body></html>

@@ -16,3 +16,4 @@ title: 首頁
 - 2026.09.20 利用 KiCad、Inkscape 製作電路圖
 - 2026.09.26 建置 `.bat` 及 `.ps1` 自動化網站建置流程
 - 2026.10.07 將 Python 透過 Pyodide 及 TypeScript 內嵌於網頁中
+- 2026.10.08 利用 `python.inline.ts` 與 `manifest.json` 實現多 `.py` 執行

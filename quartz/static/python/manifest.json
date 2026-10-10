@@ -1,0 +1,10 @@
+{
+  "entry": "main.py",
+  "files": [
+    "main.py",
+    "gui_test.py",
+    "lightup.py",
+    "tree_core.py",
+    "tree_editor.py"
+  ]
+}
