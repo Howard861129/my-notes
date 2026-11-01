@@ -89,7 +89,11 @@ export default (() => {
           </>
         )}
 
-        <link rel="icon" href={iconPath} />
+        <link rel="icon" href={iconPath} /><link
+          rel="icon"
+          type="image/svg+xml"
+          href={joinSegments(baseDir, "static/icon.svg")}
+        />
         <link
           rel="manifest"
           href={joinSegments(baseDir, "static/manifest.webmanifest")}
