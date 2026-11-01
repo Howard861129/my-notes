@@ -90,6 +90,10 @@ export default (() => {
         )}
 
         <link rel="icon" href={iconPath} />
+        <link
+          rel="manifest"
+          href={joinSegments(baseDir, "static/manifest.webmanifest")}
+        />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 

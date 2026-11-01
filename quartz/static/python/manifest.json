@@ -5,6 +5,7 @@
     "gui_test.py",
     "lightup.py",
     "tree_core.py",
-    "tree_editor.py"
+    "tree_editor.py",
+    "counter.py"
   ]
 }

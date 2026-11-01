@@ -7,6 +7,7 @@ from js import document  # pyright: ignore[reportMissingImports]
 from gui_test import start_gui
 from lightup import run_lightup
 from tree_editor import mount, unmount
+from counter import mount as mount_counter, unmount as unmount_counter
 
 
 def element_exists(element_id):
@@ -33,6 +34,11 @@ def main():
         mount("tree-editor-app")
     else:
         unmount("tree-editor-app")
+
+    if element_exists("counter-app"):
+        mount_counter("counter-app")
+    else:
+        unmount_counter("counter-app")
 
 
 if __name__ == "__main__":

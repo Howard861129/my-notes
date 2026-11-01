@@ -1,0 +1,24 @@
+
+{
+  "name": "格研 GELOGION",
+  "short_name": "格研",
+  "description": "工程、數學、程式與科學研究筆記",
+  "lang": "zh-TW",
+  "start_url": "../",
+  "scope": "../",
+  "display": "standalone",
+  "background_color": "#193c43",
+  "theme_color": "#193c43",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

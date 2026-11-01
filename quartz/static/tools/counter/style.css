@@ -1,0 +1,67 @@
+/* 與「樹狀目錄產生器」相同的色系、圓角及按鈕語言。 */
+#counter-app .counter-card {
+  --c-panel: #ffffff;
+  --c-text: #24323d;
+  --c-muted: #65747f;
+  --c-border: #dce4e9;
+  --c-accent: #197c77;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  background: var(--c-panel);
+  color: var(--c-text);
+  font: 400 16px/1.6 system-ui, "Microsoft JhengHei", sans-serif;
+}
+#counter-app .counter-card * { box-sizing: border-box; }
+#counter-app .counter-description {
+  width: 100%;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: var(--c-accent);
+}
+#counter-app .counter-main {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-right: auto;
+}
+#counter-app .counter-label { font-size: 14px; color: var(--c-muted); }
+#counter-app output {
+  min-width: 2ch;
+  font-size: 28px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+#counter-app button {
+  font: 400 13px/1.6 system-ui, "Microsoft JhengHei", sans-serif;
+  color: var(--c-text);
+  background: var(--c-panel);
+  border: 1px solid var(--c-border);
+  border-radius: 7px;
+  padding: 7px 16px;
+  min-height: 36px;
+  cursor: pointer;
+}
+#counter-app button:hover {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+}
+#counter-app button:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+@media (prefers-color-scheme: dark) {
+  #counter-app .counter-card {
+    --c-panel: #202a33;
+    --c-text: #e1eaf0;
+    --c-muted: #a4b2bf;
+    --c-border: #3a4956;
+    --c-accent: #72cfc5;
+  }
+}
